@@ -48,159 +48,159 @@ MyRetail Application
 <br/>    "currency_code" : "USD"
 <br/> });
 
- db.ProductInventoryPrice.insert({
-     "_id" : 22,
-    "value" : 13.49,
-    "currency_code" : "USD"
- });
+ <br/>db.ProductInventoryPrice.insert({
+ <br/>    "_id" : 22,
+ <br/>   "value" : 13.49,
+ <br/>   "currency_code" : "USD"
+ <br/>});
+<br/>
+ <br/>db.ProductInventoryPrice.insert({
+ <br/>   "_id" : 13860428,
+ <br/>  "value" : 9.49,
+ <br/>   "currency_code" : "USD"
+ <br/>});
+<br/>
+ <br/>db.ProductInventoryPrice.insert({
+ <br/>   "_id" : 16483589,
+ <br/>   "value" : 49.49,
+ <br/>   "currency_code" : "USD"
+ <br/>});
+<br/>
+ <br/>db.ProductInventoryPrice.insert({
+ <br/>   "_id" : 16696652,
+ <br/>   "value" : 44,
+ <br/>   "currency_code" : "USD"
+ <br/>});
+<br/>
+<br/>db.ProductInventoryPrice.insert({
+<br/>    "_id" : 16752456,
+<br/>    "value" : 44.0,
+<br/>    "currency_code" : "USD"
+<br/> });
 
- db.ProductInventoryPrice.insert({
-    "_id" : 13860428,
-    "value" : 9.49,
-    "currency_code" : "USD"
- });
+<br/> db.ProductInventoryPrice.insert({
+<br/>    "_id" : 15643793,
+<br/>    "value" : 1099.99,
+<br/>    "currency_code" : "USD"
+<br/> });
 
- db.ProductInventoryPrice.insert({
-    "_id" : 16483589,
-    "value" : 49.49,
-    "currency_code" : "USD"
- });
+<br/> db.ProductInventoryPrice.insert({
+<br/>    "_id" : 15117729,
+<br/>    "value" : 19.49,
+<br/>    "currency_code" : "USD"
+<br/> });
 
- db.ProductInventoryPrice.insert({
-    "_id" : 16696652,
-    "value" : 44,
-    "currency_code" : "USD"
- });
+<br/> After following the above steps, we must have a collection with data for product pricing.
+<br/>
+<br/> Indexing the collection with id field:-
+<br/> db.ProductInventoryPrice.ensureIndex({"_id":1});
+<br/>
+<br/> Note:- Please use a client like Robomongo or MongoVUE to easily run these. Robomongo was used for this project.
+<br/>
+<br/>Build tool used :- **MAVEN**
+<br/>
+<br/>Project installation :-
+<br/>1. Unzip or download the project.
+<br/>Note :- Eclipse IDE build used in this project is :- **4.5.2.M20160212-1500**
+<br/>
+<br/>Running the project:-
+<br/>1. Select Base directory :- ${workspace_loc:/MyRetailProject}
+<br/>2. Perform maven clean :- clean package
+<br/>3. Perform maven build :- eclipse:eclipse
+<br/>4. Server used : Jetty. Select the project and run using :- jetty:run
+<br/>5. Please checck the ## API Reference and ## Tests to run the project
 
- db.ProductInventoryPrice.insert({
-    "_id" : 16752456,
-    "value" : 44.0,
-    "currency_code" : "USD"
- });
+<br/>## API Reference
 
- db.ProductInventoryPrice.insert({
-    "_id" : 15643793,
-    "value" : 1099.99,
-    "currency_code" : "USD"
- });
+<br/>After the instalation is successful, please try accessing this page which will give you a brief idea of what the application does :-
+<br/>http://<host>:<port>/MyRetail/
 
- db.ProductInventoryPrice.insert({
-    "_id" : 15117729,
-    "value" : 19.49,
-    "currency_code" : "USD"
- });
-
- After following the above steps, we must have a collection with data for product pricing.
-
- Indexing the collection with id field:-
- db.ProductInventoryPrice.ensureIndex({"_id":1});
-
- Note:- Please use a client like Robomongo or MongoVUE to easily run these. Robomongo was used for this project.
-
-Build tool used :- **MAVEN**
-
-Project installation :-
-1. Unzip or download the project.
-Note :- Eclipse IDE build used in this project is :- **4.5.2.M20160212-1500**
-
-Running the project:-
-1. Select Base directory :- ${workspace_loc:/MyRetailProject}
-2. Perform maven clean :- clean package
-3. Perform maven build :- eclipse:eclipse
-4. Server used : Jetty. Select the project and run using :- jetty:run
-5. Please checck the ## API Reference and ## Tests to run the project
-
-## API Reference
-
-After the instalation is successful, please try accessing this page which will give you a brief idea of what the application does :-
-http://<host>:<port>/MyRetail/
-
-Controller  : com.myretail.web.controller.ProductController
-1. Read product details API
-Description : Reading the product details API to get the details of a product for the provided id.
-Method 		: GET
-Response 	: JSON representation of Product.java
-API Call 	: http://<host>:<port>/MyRetail/products/{id}
-
-Example :-
-http://<host>:<port>/MyRetail/products/16752456
-
-Result :-
-{
-  "id": 16752456,
-  "name": "Lego® Super Heroes The Tumbler 76023",
-  "current_price": {
-    "value": 44.0,
-    "currency_code": "USD"
-  }
-}
-This api call can be accessed from a browser. **Google Chrome Version 53.0.2785.116 (64-bit)** was used in this case.
-
-2. Update product price details API
-Description : Updating the product price of a product for the provided id and return the updated response.
-Method 		: PUT
-Response 	: JSON representation of Product.java
-API Call 	: http://<host>:<port>/MyRetail/products/{id}
-Body        : {
-				  "id": NUMBER,
-				  "name": STRING,
-				  "current_price": {
-				    "value": NUMBER WITH DECIMAL,
-				    "currency_code": STRING
-				  }
-				}
-Example :-
-http://<host>:<port>/MyRetail/products/16752456
-Body        : {
-				  "id": 16752456,
-				  "name": "Lego® Super Heroes The Tumbler 76023",
-				  "current_price": {
-				    "value": 500.0,
-				    "currency_code": "USD"
-				  }
-				}
-
-Result 	:- 		{
-				  "id": 16752456,
-				  "name": "Lego® Super Heroes The Tumbler 76023",
-				  "current_price": {
-				    "value": 500.0,
-				    "currency_code": "USD"
-				  }
-				}
-
-This api call can be called from any browser/addon which provides the funtion to make a PUT call. 
-Google Chrome Version **53.0.2785.116 (64-bit)** with **Insomnia** addon was used in this case.
-
+<br/>Controller  : com.myretail.web.controller.ProductController
+<br/>1. Read product details API
+<br/>Description : Reading the product details API to get the details of a product for the provided id.
+<br/>Method 		: GET
+<br/>Response 	: JSON representation of Product.java
+<br/>API Call 	: http://<host>:<port>/MyRetail/products/{id}
+<br/>
+<br/>Example :-
+<br/>http://<host>:<port>/MyRetail/products/16752456
+<br/>
+<br/>Result :-
+<br/>{
+<br/>  "id": 16752456,
+<br/>  "name": "Lego® Super Heroes The Tumbler 76023",
+<br/>  "current_price": {
+<br/>    "value": 44.0,
+<br/>    "currency_code": "USD"
+<br/>  }
+<br/>}
+<br/>This api call can be accessed from a browser. **Google Chrome Version 53.0.2785.116 (64-bit)** was used in this case.
+<br/>
+<br/>2. Update product price details API
+<br/>Description : Updating the product price of a product for the provided id and return the updated response.
+<br/>Method 		: PUT
+<br/>Response 	: JSON representation of Product.java
+<br/>API Call 	: http://<host>:<port>/MyRetail/products/{id}
+<br/>Body        : {
+<br/>				  "id": NUMBER,
+<br/>				  "name": STRING,
+<br/>				  "current_price": {
+<br/>				    "value": NUMBER WITH DECIMAL,
+<br/>				    "currency_code": STRING
+<br/>				  }
+<br/>				}
+<br/>Example :-
+<br/>http://<host>:<port>/MyRetail/products/16752456
+<br/>Body        : {
+<br/>				  "id": 16752456,
+<br/>				  "name": "Lego® Super Heroes The Tumbler 76023",
+<br/>				  "current_price": {
+<br/>				    "value": 500.0,
+<br/>				    "currency_code": "USD"
+<br/>				  }
+<br/>				}
+<br/>
+<br/>Result 	:- 		{
+<br/>				  "id": 16752456,
+<br/>				  "name": "Lego® Super Heroes The Tumbler 76023",
+<br/>				  "current_price": {
+<br/>				    "value": 500.0,
+<br/>				    "currency_code": "USD"
+<br/>				  }
+<br/>				}
+<br/>
+<br/>This api call can be called from any browser/addon which provides the funtion to make a PUT call. 
+<br/>Google Chrome Version **53.0.2785.116 (64-bit)** with **Insomnia** addon was used in this case.
+<br/>
 ## Tests
+<br/>
+<br/>All the test class's names end with Test and reside in src/test/java within their respective packages.
+<br/>Project name is MyRetailProject.
 
-All the test class's names end with Test and reside in src/test/java within their respective packages.
-Project name is MyRetailProject.
+<br/>Integration testing                        :- com.myretail.controllertest.ProductControllerTest
+<br/>This test is performed to check if the controllers are returning the desired response code.
+<br/>Tests done for both GET and PUT request with different cases.
 
-Integration testing of controllers 	:- com.myretail.controllertest.ProductControllerTest
-This test is performed to check if the controllers are returning the desired response code.
-Tests done for both GET and PUT request with different cases.
+<br/>Unit testing of Service class 		:- com.myretail.servicetest.ProductServiceTest
+<br/>This test is performed to check the sanctity of the service methods.
+<br/>Serices get the request from controller, make a request to dao and send the response back to controllers.
 
-Unit testing of Service class 		:- com.myretail.servicetest.ProductServiceTest
-This test is performed to check the sanctity of the service methods.
-Serices get the request from controller, make a request to dao and send the response back to controllers.
+<br/>Unit testing of util class 	        :- com.myretail.utiltest.UtilTest
+<br/>This test is performed to check the sanctity of the util methods.
 
-Unit testing of util class 			:- com.myretail.utiltest.UtilTest
-This test is performed to check the sanctity of the util methods.
-
-After project setup here are the steps to run the tests.
-1. Select Base directory :- ${workspace_loc:/MyRetailProject}
-2. Run the following Maven command :- -Dtest=*Test clean test 
-3. Check in console/logs to see if all the tests have passed.
-
+<br/>After project setup here are the steps to run the tests.
+<br/>1. Select Base directory :- ${workspace_loc:/MyRetailProject}
+<br/>2. Run the following Maven command :- -Dtest=*Test clean test 
+<br/>3. Check in console/logs to see if all the tests have passed.
+<br/>
 ## References
-
+<br/>
 https://docs.mongodb.com/manual/reference/
 http://mockito.org/
 http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html
 https://projects.spring.io/spring-framework/
 https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html
-
+<br/>
 ## License
-
+<br/>
 For internal purpose only.
