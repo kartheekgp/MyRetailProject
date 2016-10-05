@@ -163,13 +163,14 @@ public class Util {
 		return new PropertySourcesPlaceholderConfigurer();
 	}
 	
+	//Returns mongoTemplate
 	public MongoTemplate returnMongoTemplate(){
 		MongoTemplate montoTemplate = null;
 		try {
 			montoTemplate = springMongoConfig.mongoTemplate();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception occurred while calling returnMongoTemplate in "+className);
+			logger.error(getStackTrace(e));
 		}
 		return montoTemplate;
 	}
