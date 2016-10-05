@@ -10,43 +10,43 @@ MyRetail Application
 ## Flow overview
 
 <br/>For GET request to get the details of a product
-1. User provides the id in the GET request for which the product details are to be fetched.
-2. A REST call is made to get the product name.
-3. If product name exists, then a call is made to MongDB to get the details of price for the product.
-4. Result is displayed to the user in the form of a JSON.
-5. In any step the validation fails, appropriate error message will be sent as response.
-6. In case of any exceptions, appropriate exception message/stack will be sent as response.
+<br/>1. User provides the id in the GET request for which the product details are to be fetched.
+<br/>2. A REST call is made to get the product name.
+<br/>3. If product name exists, then a call is made to MongDB to get the details of price for the product.
+<br/>4. Result is displayed to the user in the form of a JSON.
+<br/>5. In any step the validation fails, appropriate error message will be sent as response.
+<br/>6. In case of any exceptions, appropriate exception message/stack will be sent as response.
 
-For PUT request to update the details of price.
-1. User provides the id in the API request for which the product details are to be fetched.
-2. Provides the product body in PUT request for the product to be updated. - It is assumed that the id in api and body are same.
-3. If product name matches with the name from the REST call, it is assumed that it is the right product.
-4. If the structure of the request is correct, the product price is updated.
-5. Updated product is sent to the user as response.
-6. In any step the validation fails, appropriate error message will be sent as response.
-7. In case of any exceptions, appropriate exception message/stack will be sent as response.
+<br/>For PUT request to update the details of price.
+<br/>1. User provides the id in the API request for which the product details are to be fetched.
+<br/>2. Provides the product body in PUT request for the product to be updated. - It is assumed that the id in api and body are same.
+<br/>3. If product name matches with the name from the REST call, it is assumed that it is the right product.
+<br/>4. If the structure of the request is correct, the product price is updated.
+<br/>5. Updated product is sent to the user as response.
+<br/>6. In any step the validation fails, appropriate error message will be sent as response.
+<br/>7. In case of any exceptions, appropriate exception message/stack will be sent as response.
 
 ## Motivation
 
-This project is part of Target Recruitment process.
+<br/>This project is part of Target Recruitment process.
 
 ## Installation
 
-JAVA Configuration
-JAVA 8 is required for this app. Please refer references link on the same.
+<br/>JAVA Configuration
+<br/>JAVA 8 is required for this app. Please refer references link on the same.
 
-MongoDB Installation/configuration
-MongoDB with the name "test" has to be created. By default, it must have host as 127.0.0.1 and port as 27017.
-MongoDB version used in this project :- **3.2.9**
-Run the following command in the console to create a table :- 
-db.createCollection("ProductInventoryPrice");
+<br/>MongoDB Installation/configuration
+<br/>MongoDB with the name "test" has to be created. By default, it must have host as 127.0.0.1 and port as 27017.
+<br/>MongoDB version used in this project :- **3.2.9**
+<br/>Run the following command in the console to create a table :- 
+<br/>db.createCollection("ProductInventoryPrice");
 
-To insert the data in the collection, please fire the following queries :-
-db.ProductInventoryPrice.insert({
-     "_id" : 22,
-    "value" : 13.49,
-    "currency_code" : "USD"
- });
+<br/>To insert the data in the collection, please fire the following queries :-
+<br/>db.ProductInventoryPrice.insert({
+<br/>     "_id" : 22,
+<br/>    "value" : 13.49,
+<br/>    "currency_code" : "USD"
+<br/> });
 
  db.ProductInventoryPrice.insert({
      "_id" : 22,
