@@ -1,15 +1,15 @@
 MyRetail Application
 ====================
+<br/>
+<br/>This project deals with the myRetail retailer product api. 
+<br/>It has two apis exposed:- 
+<br/>1. GET request to get the details of a product.
+<br/>2. PUT request to update the details of price.
 
-This project deals with the myRetail retailer product api. 
-It has two apis exposed:- 
-1. GET request to get the details of a product.
-2. PUT request to update the details of price.
-
-
+<br/>
 ## Flow overview
 
-For GET request to get the details of a product
+<br/>For GET request to get the details of a product
 1. User provides the id in the GET request for which the product details are to be fetched.
 2. A REST call is made to get the product name.
 3. If product name exists, then a call is made to MongDB to get the details of price for the product.
