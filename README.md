@@ -113,17 +113,17 @@ MyRetail Application
 <br/>## API Reference
 
 <br/>After the instalation is successful, please try accessing this page which will give you a brief idea of what the application does :-
-<br/>http://<host>:<port>/MyRetail/
+<br/>http://host:port/MyRetail/
 
 <br/>Controller  : com.myretail.web.controller.ProductController
 <br/>1. Read product details API
 <br/>Description : Reading the product details API to get the details of a product for the provided id.
 <br/>Method 		: GET
 <br/>Response 	: JSON representation of Product.java
-<br/>API Call 	: http://<host>:<port>/MyRetail/products/{id}
+<br/>API Call 	: http://host:port/MyRetail/products/{id}
 <br/>
 <br/>Example :-
-<br/>http://<host>:<port>/MyRetail/products/16752456
+<br/>http://host:port/MyRetail/products/16752456
 <br/>
 <br/>Result :-
 <br/>{
@@ -140,7 +140,7 @@ MyRetail Application
 <br/>Description : Updating the product price of a product for the provided id and return the updated response.
 <br/>Method 		: PUT
 <br/>Response 	: JSON representation of Product.java
-<br/>API Call 	: http://<host>:<port>/MyRetail/products/{id}
+<br/>API Call 	: http://host:port/MyRetail/products/{id}
 <br/>Body        : {
 <br/>				  "id": NUMBER,
 <br/>				  "name": STRING,
@@ -150,7 +150,7 @@ MyRetail Application
 <br/>				  }
 <br/>				}
 <br/>Example :-
-<br/>http://<host>:<port>/MyRetail/products/16752456
+<br/>http://host:port/MyRetail/products/16752456
 <br/>Body        : {
 <br/>				  "id": 16752456,
 <br/>				  "name": "Lego® Super Heroes The Tumbler 76023",
