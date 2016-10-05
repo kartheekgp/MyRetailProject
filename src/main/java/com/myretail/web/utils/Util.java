@@ -55,7 +55,6 @@ public class Util {
 	}
 	
 	//This method makes the call to the API to get the information of the product based on id and api url
-	//Written specifically to execute unit testing
 	public ProductResponse callHTTPGetRequestForProductWithAPIURL(Long id,String productURLLocal) throws IOException {
 		logger.debug("Inside callHTTPGetRequestForProductWithAPIURL method in "+className+" where id is "+id);
 		productURLLocal = productURLLocal.replace(ProductConstants.PRODUCT_ID_TO_REPLACE, id.toString());
